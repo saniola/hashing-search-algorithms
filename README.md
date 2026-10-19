@@ -1,47 +1,21 @@
-# Search Algorithm Efficiency Comparison
+# Hashing & Search Algorithms
 
-## Overview
-This project aims to compare the efficiency of three substring search algorithms: Boyer-Moore (BM), Knuth-Morris-Pratt (KMP), and Rabin-Karp (RK) based on two text files, `text_01.txt` and `text_02.txt`. The algorithms are tested for both a real substring that exists in the text and a fabricated substring.
+Python implementations of a hash table, binary search with upper-bound lookup, and substring search algorithm benchmarking.
 
-## Experiment Results
+## Features
 
-### Text1:
-- **Real Substring:**
-  - BM: 0.09415 seconds
-  - KMP: 0.13533 seconds
-  - RK: 0.31806 seconds
+- **task_01.py** — a `HashTable` with chaining for collision resolution, supporting insert/get/delete
+- **task_02.py** — binary search over a sorted array of floats that also returns the "upper bound" when the exact value isn't found, plus the iteration count
+- **task_03.py** — benchmarks Boyer-Moore, Knuth-Morris-Pratt, and Rabin-Karp substring search algorithms (`boyer_moore.py`, `knuth_morris_pratt.py`, `rabin_karp.py`) against real and fabricated substrings in `text_01.txt` and `text_02.txt`
 
-- **Fabricated Substring:**
-  - BM: 0.16600 seconds
-  - KMP: 0.68628 seconds
-  - RK: 1.90015 seconds
+## Technology
 
-### Text2:
-- **Real Substring:**
-  - BM: 0.06225 seconds
-  - KMP: 0.08449 seconds
-  - RK: 0.19206 seconds
+- Python 3
 
-- **Fabricated Substring:**
-  - BM: 0.22343 seconds
-  - KMP: 0.99720 seconds
-  - RK: 2.80832 seconds
+## Running
 
-## Conclusion
-
-### Real Substring:
-- For both text files, Boyer-Moore consistently demonstrated the fastest performance among the three algorithms.
-- Knuth-Morris-Pratt exhibited competitive results, slightly slower than Boyer-Moore.
-- Rabin-Karp consistently showed the slowest performance.
-
-### Fabricated Substring:
-- Boyer-Moore maintained its efficiency, outperforming the other algorithms.
-- Knuth-Morris-Pratt exhibited variable performance but generally performed better than Rabin-Karp.
-- Rabin-Karp consistently demonstrated the slowest performance, especially evident with fabricated substrings.
-
-In conclusion, the choice of algorithm depends on the specific characteristics of the data and the nature of the substrings. Boyer-Moore is recommended for scenarios where high efficiency is crucial, especially for real substrings. Knuth-Morris-Pratt is a competitive alternative, while Rabin-Karp may be less suitable for certain scenarios due to its slower performance.
-
-## Instructions for Replication
-1. Ensure the text files `text_01.txt` and `text_02.txt` are in the same directory as the code.
-2. Run the provided Python script for algorithm efficiency measurement.
-3. Analyze the results to determine the most suitable substring search algorithm for your specific use case.
+```
+python task_01.py
+python task_02.py
+python task_03.py
+```
